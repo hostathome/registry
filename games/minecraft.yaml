@@ -39,6 +39,9 @@ config_schema:
     seed:
       type: string
       default: ""
+    spawn-protection:
+      type: int
+      default: 16
     view-distance:
       type: int
       default: 10
