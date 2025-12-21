@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HostAtHome Game Definition",
+  "type": "object",
+  "required": ["name", "display_name", "description", "image", "ports", "volumes"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique identifier for the game (lowercase, no spaces)"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the game server"
+    },
+    "image": {
+      "type": "string",
+      "description": "Docker image URL (ghcr.io/hostathome/<game>-server:latest)"
+    },
+    "ports": {
+      "type": "object",
+      "required": ["player"],
+      "properties": {
+        "player": {
+          "type": "integer",
+          "description": "External port for player connections (typically 1024)"
+        },
+        "rcon": {
+          "type": "integer",
+          "description": "External port for RCON/admin (typically 1025)"
+        }
+      }
+    },
+    "internal_ports": {
+      "type": "object",
+      "properties": {
+        "player": {
+          "type": "integer",
+          "description": "Internal container port for player connections"
+        },
+        "rcon": {
+          "type": "integer",
+          "description": "Internal container port for RCON"
+        }
+      }
+    },
+    "protocols": {
+      "type": "object",
+      "properties": {
+        "player": {
+          "type": "string",
+          "enum": ["tcp", "udp"],
+          "default": "tcp"
+        },
+        "rcon": {
+          "type": "string",
+          "enum": ["tcp", "udp"],
+          "default": "tcp"
+        }
+      }
+    },
+    "volumes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Volume mounts (use {game} as placeholder)"
+    },
+    "config_schema": {
+      "type": "object",
+      "description": "Schema for config.yaml options"
+    }
+  }
+}

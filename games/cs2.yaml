@@ -1,0 +1,48 @@
+name: cs2
+display_name: Counter-Strike 2
+description: Valve's tactical shooter with competitive and casual modes
+image: ghcr.io/hostathome/cs2-server:main
+ports:
+  player: 1024
+  rcon: 1025
+internal_ports:
+  player: 27015
+  rcon: 27015
+protocols:
+  player: udp
+  rcon: tcp
+volumes:
+  - ./{game}-server:/data
+config_schema:
+  server:
+    hostname:
+      type: string
+      default: "HostAtHome CS2"
+    password:
+      type: string
+      default: ""
+    rcon-password:
+      type: string
+      default: ""
+    max-players:
+      type: int
+      default: 10
+    lan-only:
+      type: bool
+      default: true
+  game:
+    map:
+      type: string
+      default: de_dust2
+    mode:
+      type: string
+      default: competitive
+      options: [competitive, casual, deathmatch, wingman]
+    tickrate:
+      type: int
+      default: 128
+  steam:
+    gslt:
+      type: string
+      default: ""
+      description: "Game Server Login Token from https://steamcommunity.com/dev/managegameservers"
