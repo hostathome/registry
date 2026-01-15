@@ -68,10 +68,6 @@
         "type": "string"
       },
       "description": "Volume mounts (use {game} as placeholder)"
-    },
-    "config_schema": {
-      "type": "object",
-      "description": "Schema for config.yaml options"
     }
   }
 }

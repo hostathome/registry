@@ -8,47 +8,8 @@ ports:
 internal_ports:
   player: 25565
   rcon: 25575
+protocols:
+  player: tcp
+  rcon: tcp
 volumes:
   - ./{game}-server:/data
-config_schema:
-  server:
-    motd:
-      type: string
-      default: "HostAtHome Minecraft Server"
-    max-players:
-      type: int
-      default: 20
-    gamemode:
-      type: string
-      default: survival
-      options: [survival, creative, adventure, spectator]
-    difficulty:
-      type: string
-      default: normal
-      options: [peaceful, easy, normal, hard]
-    hardcore:
-      type: bool
-      default: false
-    pvp:
-      type: bool
-      default: true
-  world:
-    type:
-      type: string
-      default: default
-    seed:
-      type: string
-      default: ""
-    spawn-protection:
-      type: int
-      default: 16
-    view-distance:
-      type: int
-      default: 10
-  network:
-    online-mode:
-      type: bool
-      default: true
-    white-list:
-      type: bool
-      default: false

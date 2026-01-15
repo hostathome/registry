@@ -8,33 +8,8 @@ ports:
 internal_ports:
   player: 16261
   rcon: 27015
+protocols:
+  player: tcp
+  rcon: tcp
 volumes:
   - ./{game}-server:/data
-config_schema:
-  server:
-    name:
-      type: string
-      default: "HostAtHome Zomboid"
-    description:
-      type: string
-      default: "A Project Zomboid server"
-    password:
-      type: string
-      default: ""
-    max-players:
-      type: int
-      default: 16
-    admin-password:
-      type: string
-      default: "admin"
-  gameplay:
-    pause-empty:
-      type: bool
-      default: true
-    pvp:
-      type: bool
-      default: true
-  world:
-    map:
-      type: string
-      default: "Muldraugh, KY"
