@@ -24,8 +24,8 @@ display_name: Minecraft Java Edition         # Human-readable name
 description: Vanilla Minecraft server        # Brief description
 image: ghcr.io/hostathome/minecraft-server:latest
 ports:
-  player: 1024                               # External port
-  rcon: 1025
+  player: 30065                               # External port
+  rcon: 30066
 internal_ports:
   player: 25565                              # Container internal port
   rcon: 25575

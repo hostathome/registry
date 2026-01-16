@@ -3,8 +3,8 @@ display_name: Counter-Strike 2
 description: Valve's tactical shooter with competitive and casual modes
 image: ghcr.io/hostathome/cs2-server:main
 ports:
-  player: 1024
-  rcon: 1025
+  player: 3065
+  rcon: 30066
 internal_ports:
   player: 27015
   rcon: 27015

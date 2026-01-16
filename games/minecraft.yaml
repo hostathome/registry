@@ -3,8 +3,8 @@ display_name: Minecraft Java Edition
 description: Vanilla Minecraft server with mod support (Paper, Fabric, Forge)
 image: ghcr.io/hostathome/minecraft-server:main
 ports:
-  player: 1024
-  rcon: 1025
+  player: 30065
+  rcon: 30066
 internal_ports:
   player: 25565
   rcon: 25575

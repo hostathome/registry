@@ -3,8 +3,8 @@ display_name: Project Zomboid
 description: Open-world zombie survival game with multiplayer support
 image: ghcr.io/hostathome/zomboid-server:main
 ports:
-  player: 1024
-  rcon: 1025
+  player: 30065
+  rcon: 30066
 internal_ports:
   player: 16261
   rcon: 27015

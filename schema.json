@@ -26,11 +26,11 @@
       "properties": {
         "player": {
           "type": "integer",
-          "description": "External port for player connections (typically 1024)"
+          "description": "External port for player connections (typically 30065)"
         },
         "rcon": {
           "type": "integer",
-          "description": "External port for RCON/admin (typically 1025)"
+          "description": "External port for RCON/admin (typically 30066)"
         }
       }
     },
